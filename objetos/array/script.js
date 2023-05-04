@@ -1,36 +1,49 @@
-// const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
-const precos = [49, 99, 69, 89];
+const comidas = ['Pizzas', 'Frango', 'Carne', 'Macarrão'];
+//remova o primeiro valor de comidas e coloque em uma variavel      
+const primeiroElemento = comidas.shift()
+console.log(primeiroElemento)
+//remova o último valor de comidas e coloque em uma variavel
+const ultimoElemento = comidas.pop()
+console.log(ultimoElemento)
+//adicione 'Arroz' ao final da array
+comidas.push('Arroz')
+console.log(comidas)
+//adcione 'peixe' e 'batata' ao inicio da array
+comidas.unshift('peixe', 'batata')
+console.log(comidas)
 
-const dados = [new String('Tipo 1'), ['Carro', 'Portas', {cor: 'Azul', preco: 2000}],
-function andar(nome){console.log(nome)}];
 
-const carros = new Array('Ford', 'Fiat', 'Honda');
+const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+//Arrume os estudantes em ordem alfabéticas
+estudantes.sort()
+console.log(estudantes)
+//Inverta a ordem dos estudantes
+const invertido = estudantes.slice(0).reverse()
+console.log(invertido)
+//Verifique se joana faz parte dos estudantes
+console.log(estudantes.includes('Joana'))
+//Verifique se juliana faz parte dos estudantes
+console.log(estudantes.includes('juliana'))
 
-carros[2] = 'Ferrari';
-carros[3] = 'Kia';
-carros[20] = 'Kia';
 
-console.log(carros.length)
+let html = `<section>
+                <div>Sobre</div>
+                <div>Produtos</div>
+                <div>Contatos</div>
+            </section>`
 
+//substitua section por ul e div com li,
+html = html.split('section')
+//utilizando split e join
+html = html.join('ul')  
 
-const li = document.querySelectorAll('li');
+const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+//remova o último carro, mas antes de remover
+//salve a array original em outra váriavel
 
-const arrayLi = Array.from(li)
+const carrosCopia = carros.slice()
 
-const obj = {
-    0: 'Andre',
-    1: 'Rafael',
-    2: 'Teste',
-    length: 4,
-}
+carros.pop()
 
-const objArray = Array.from(obj);
-
-console.log(li)
-console.log(arrayLi)
-
-const frutas = ['Banana', 'Pêra', ['Uva Roxa', 'Uva Verde']];
-
-console.log(frutas[2][0].length)
-
-const instrumentos = ['Guitarra', 'Baixo', 'Violão']
+console.log(carros)
+console.log(carrosCopia)
