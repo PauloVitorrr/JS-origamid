@@ -1,97 +1,69 @@
-// const carros = ['Ford', 'Fiat', 'Honda']
+//Selecione cada curso e retorne uma array 
+//com objetos contendo o titulo, descricao,
+//aulas e horas de cada curso
+const cursos = document.querySelectorAll('.curso')
+const arrayCursos = Array.from(cursos)
 
-// carros.forEach((item,index,array) =>{
-//     console.log(item.toUpperCase(), index,array)
-// })
-
-// const li = document.querySelectorAll('li')
-
-// const retornoForeach = li.forEach((item,index) =>{
-//     item.classList.add('ativa' + index)
-// })
-
-// console.log(retornoForeach) // retorna undefined    
-
-// const carros = ['Ford', 'Fiat', 'Honda']
-
-// const novaArray = carros.map((item,index,array) =>{
-//     return item.toUpperCase()
-// })
-
-// const numeros = [2, 4, 5, 6, 78];
-// const numerosX2 = numeros.map(n => n * 2);
-
-// console.log(numerosX2);
-
-// console.log(novaArray)
-// console.log(carros)
-
-// const aulas = [
-//     {
-//         nome: 'HTML 1',
-//         min: 15
-//     },
-//     {
-//         nome: 'HTML 2',
-//         min: 10
-//     },
-//     {
-//         nome: 'CSS 1',
-//         min: 20
-//     },
-//     {
-//         nome: 'JS 1',
-//         min: 25
-//     },
-// ]
-
-// const temposAulas = aulas.map(aula => aula.min);
-
-// const nomeAulas = aula => aula.nome;
-
-// const nomesAulas2 = function(aula){
-//     return aula.nome
-// }
-
-// const arrayNomeAulas = aulas.map(nomeAulas)
-
-// console.log(arrayNomeAulas)
-// console.log(tempoAulas)
-
-// const aulas = [10, 25, 30];
-
-// const reduceAulas = aulas.reduce((acumulador, item, index, array) => {
-//     console.log(acumulador, item, index)
-//     return acumulador + item;
-// },33)
-
-const numeros = [10, 25, 30, 3, 54, 33, 22];
-
-const maiorNumero = numeros.reduce((anterior, atual) => {
-    if(anterior > atual)
-        return anterior
-    else 
-        return atual
+const objetosCurso = arrayCursos.map((curso) => {
+    const titulo = curso.querySelector('h1').innerText
+    const descricao = curso.querySelector('p').innerText
+    const aulas = curso.querySelector('.aulas').innerText
+    const horas = curso.querySelector('.horas').innerText
+    
+    return{
+        titulo,
+        descricao,
+        aulas,
+        horas
+    }
 })
 
-console.log(maiorNumero)
+// console.log(objetosCurso)
 
+//retorne uma lista com os 
+//numeros maiores que 100
 
-const aulas = [
+const numeros = [3, 44, 333, 23, 122, 322, 33]
+const maioresQue100 = numeros.filter(n => n > 100)
+
+// console.log(maioresQue100)
+
+// Verifique se baixo faz parte
+// da lista de instrumentos e retorne true
+const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+const possuiBaixo = instrumentos.some((item) =>{
+    return item === 'Baixo';
+})
+
+// console.log(possuiBaixo)
+
+//retorne o valor total das compras 
+const compras = [
     {
-        nome: 'HTML 1',
-        min: 15
+        item: 'Banana',
+        preco: 'R$ 4,99'
     },
     {
-        nome: 'HTML 2',
-        min: 10
+        item: 'Ovo',
+        preco: 'R$ 2,99'
     },
     {
-        nome: 'CSS 1',
-        min: 20
+        item: 'Carne',
+        preco: 'R$ 25,49'
     },
     {
-        nome: 'JS 1',
-        min: 25
+        item: 'Refrigerante',
+        preco: 'R$ 5,35'
     },
+    {
+        item: 'Queijo',
+        preco: 'R$ 10,60'
+    }
 ]
+
+const somaPreco = compras.reduce((acumulador, atual) => {
+    const PrecoFormatado = +atual.preco.replace('R$', '').replace(',' , '.')
+    return PrecoFormatado + acumulador
+}, 0)
+
+console.log(somaPreco)
